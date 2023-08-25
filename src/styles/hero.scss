@@ -1,4 +1,6 @@
 #hero {
+    --padding: 4rem;
+
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr;
@@ -9,7 +11,7 @@
     > .logo,
     nav,
     .text {
-        padding: 4rem;
+        padding: var(--padding);
     }
 
     .logo {
@@ -95,8 +97,8 @@
 
     .scroll-indicator {
         position: absolute;
-        inset-block-end: 2rem;
-        inset-inline-end: 2rem;
+        inset-block-end: var(--padding);
+        inset-inline-end: var(--padding);
         overflow: hidden;
 
         font-size: 7.2rem;
