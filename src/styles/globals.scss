@@ -1,0 +1,154 @@
+:root {
+    --color-gray-98: hsl(0deg 0% 98%);
+    --color-gray-95: hsl(0deg 0% 95%);
+    --color-gray-90: hsl(0deg 0% 90%);
+    --color-gray-80: hsl(0deg 0% 80%);
+    --color-gray-70: hsl(0deg 0% 70%);
+    --color-gray-60: hsl(0deg 0% 60%);
+    --color-gray-40: hsl(0deg 0% 40%);
+    --color-gray-36: hsl(0deg 0% 36%);
+    --color-gray-30: hsl(0deg 0% 30%);
+    --color-gray-20: hsl(0deg 0% 20%);
+    --color-gray-16: hsl(0deg 0% 16%);
+    --color-gray-14: hsl(0deg 0% 14%);
+    --color-gray-12: hsl(0deg 0% 12%);
+    --color-gray-10: hsl(0deg 0% 10%);
+    --color-gray-8: hsl(0deg 0% 8%);
+
+    --color-primary: hsl(36deg 100% 50%);
+    --color-primary-opposite: var(--color-gray-10);
+    --color-primary-lighter: hsl(36deg 100% 58%);
+
+    --color-success: hsl(140deg 60% 50%);
+    --color-success-opposite: var(--color-gray-10);
+    --color-success-lighter: hsl(140deg 60% 58%);
+
+    --color-danger: hsl(350deg 100% 60%);
+    --color-danger-opposite: var(--color-gray-10);
+    --color-danger-lighter: hsl(350deg 100% 68%);
+
+    --color-border-fade: hsl(0deg 0% 90% / 20%);
+
+    --color-box-shadow-subtle: hsl(0deg 0% 20% / 8%);
+    --box-shadow-subtle: 0 0.3rem 0.7rem 0 var(--color-box-shadow-subtle);
+
+    --form-element-padding-block: 1em;
+    --form-element-padding-inline: 1em;
+    --form-element-padding: var(--form-element-padding-block) var(--form-element-padding-inline);
+
+    --border-radius: 0.4rem;
+
+    --outline-focus-visible: 0.2rem dashed var(--color-gray-90);
+
+    --animation-duration-fast: 0.2s;
+    --animation-duration-normal: 0.5s;
+    --animation-duration-slow: 1s;
+
+    --page-max-inline-size: 120rem;
+    --page-padding-inline: calc(max(100% - var(--page-max-inline-size), 4rem) / 2);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color-scheme: dark;
+
+    font-family: "Marcellus", serif;
+    font-size: 62.5%;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body {
+    background-color: var(--color-gray-8);
+    color: var(--color-gray-70);
+
+    position: relative;
+    overflow-x: hidden;
+
+    display: grid;
+    gap: 2rem;
+
+    min-block-size: 100vb;
+    min-block-size: 100dvb;
+
+    font-size: 1.8rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    --border-size: 0.1em;
+
+    color: inherit;
+
+    position: relative;
+
+    clip-path: inset(0);
+
+    padding-block-end: var(--border-size);
+
+    text-decoration: none;
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline: 0;
+
+        border-block-end: var(--border-size) solid currentcolor;
+
+        translate: -100%;
+
+        transition: translate var(--animation-duration-fast) ease-in-out;
+    }
+
+    &[data-hover-state="idle"] {
+        &::after {
+            transition-duration: 0s;
+        }
+    }
+
+    &[data-hover-state="entered"] {
+        &::after {
+            translate: 0;
+        }
+    }
+
+    &[data-hover-state="left"] {
+        &::after {
+            translate: 100%;
+        }
+    }
+}
+
+svg {
+    vertical-align: middle;
+}
+
+.page-bleed {
+    padding-inline: var(--page-padding-inline);
+}

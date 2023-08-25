@@ -4,10 +4,49 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + TS</title>
+        <title>Fitnest</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Italiana&family=Marcellus&family=Oswald:wght@700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="/src/styles/utils.scss" />
+        <link rel="stylesheet" href="/src/styles/globals.scss" />
+        <link rel="stylesheet" href="/src/styles/hero.scss" />
+
+        <script src="/src/scripts/main.ts" type="module" defer></script>
+        <script src="/src/scripts/links.ts" type="module" defer></script>
     </head>
     <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
+        <section id="hero">
+            <div class="logo">
+                <a href="/">Fitnest</a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#pictures">Pictures</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#trainers">Trainers</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="text">
+                <div class="top">Show Them</div>
+                <div class="center">
+                    <div class="large">You Can</div>
+                    <p class="small">Let our successful experience help you build the body you deserve.</p>
+                </div>
+                <div class="bottom">Do This</div>
+            </div>
+
+            <div class="scroll-indicator" inert>
+                <div class="arrow">↓</div>
+            </div>
+        </section>
     </body>
 </html>
